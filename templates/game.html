@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AutoComplete</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">  
+    </script>  
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">  
+    </script>  
+    
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" type="text/css" />  
+</head>
+<body>
+    <h1>Make a guess</h1>
+    <input type="text" id="tags">
+    
+    <script>
+  $( function() {
+    var availableTags = [
+        {% for song in songs %}
+            "{{song['name']|safe}}",
+        {% endfor %}
+        ];
+    $( "#tags" ).autocomplete({
+      source: availableTags,
+      html:true
+    })
+
+    });
+
+  </script>    
+</body>
+</html>
