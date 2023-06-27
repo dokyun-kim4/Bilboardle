@@ -4,6 +4,7 @@ from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 import requests as rq
+import datetime
 load_dotenv()
 
 spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.getenv('ID'),
@@ -13,11 +14,52 @@ spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.getenv('ID'),
 )
 
 URL = 'https://www.billboard.com/charts/hot-100/'
-        
+      
+
+class song:
+    def __init__(self,title:str,artist:str,release_date:str,duration:int,explicit:bool,ranking:int):
+        """
+        Song object constructor
+        """
+        self._title = title
+        self._artist=artist
+        self._release_date = datetime.datetime(
+                                int(release_date.split('-')[0]),
+                                int(release_date.split('-')[1]),
+                                int(release_date.split('-')[2])
+                                )
+        self._duration= duration
+        self._is_explicit = explicit
+        self._ranking = ranking
+
+    @property
+    def title(self)->str:
+        return self._title
+    
+    @property
+    def artist(self)->str:
+        return self._artist
+    
+    @property
+    def release_date(self)->datetime:
+        return self._release_date
+    
+    @property
+    def duration(self)->int:
+        return self._duration
+    
+    @property
+    def is_explicit(self)->bool:
+        return self._is_explicit
+    
+    @property
+    def ranking(self):
+        return self._ranking  
+
 
 def get_bilboard()->list:
     """
-    Finds current top 100 songs on Bilboard, returns a list of dictionaries
+    Scrape current top 100 songs on bilboard.com, returns a list of dictionaries
     that are formatted {'name':song title, 'artist':artist name}
     """
     response = rq.get(URL)
@@ -33,13 +75,3 @@ def get_bilboard()->list:
                 ]
 
     return top_100
-
-
-def get_artist():
-    pass
-
-def get_album():
-    pass
-
-def get_year():
-    pass
