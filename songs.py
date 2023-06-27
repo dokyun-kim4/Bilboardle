@@ -75,3 +75,39 @@ def get_bilboard()->list:
                 ]
 
     return top_100
+
+
+def compile_songinfo(songs_and_artists):
+    """
+    Takes list of {'name':song title, 'artist':artist name}, and creates a 
+    list of `song` objects with more info about the song
+    """
+    songList=[]
+
+    def search_song(title,artist):
+        """
+        Search a song by title and artist using Spotify API, returns dictionary
+        of information about the song
+        """
+        query = spotify.search(
+                          q=title+" "+artist,
+                          type='track',
+                          limit=1)
+        song_info = query['tracks']['items'][0]
+        return song_info
+    
+    for idx, pair in enumerate(songs_and_artists):
+        title = pair['name']
+        artist = pair['artist']
+        curr_song = search_song(title=title,artist=artist)
+        songList.append(
+                        song(
+                              title=curr_song['name'],
+                              artist=curr_song['album']['artists'][0]['name'],
+                              release_date=curr_song['album']['release_date'],
+                              duration=curr_song['duration_ms'],
+                              explicit=curr_song['explicit'],
+                              ranking=idx+1
+                        )
+                      )
+    return songList
