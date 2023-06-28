@@ -2,9 +2,13 @@
 Website for playing Bilboardle
 """
 from flask import Flask, render_template, redirect, request
-from songs import get_bilboard
+from songs import song,get_bilboard,compile_songinfo
 
 app = Flask(__name__)
+
+songlist = compile_songinfo(get_bilboard())
+song_names = [entry.title for entry in songlist]
+
 
 @app.route('/')
 def home():
@@ -12,7 +16,7 @@ def home():
 
 @app.route('/bilboardle')
 def game():
-    return render_template("game.html", songs = get_bilboard())
+    return render_template("game.html", songs = song_names)
   
 
 if __name__ == '__main__':
