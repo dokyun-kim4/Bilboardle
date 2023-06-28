@@ -32,6 +32,9 @@ class song:
         self._is_explicit = explicit
         self._ranking = ranking
 
+    def __repr__(self) -> str:
+        return f"title: {self._title} | artist: {self._artist} | release date: {self._release_date} | duration: {self._duration} | explicit: {self._is_explicit} | ranking: {self._ranking}"
+
     @property
     def title(self)->str:
         return self._title
