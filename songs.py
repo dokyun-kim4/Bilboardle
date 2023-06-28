@@ -116,3 +116,43 @@ def compile_songinfo(songs_and_artists):
                         )
                       )
     return songList
+
+
+def compare_song(guess:song,answer:song):
+    """
+    Compares two songs and returns a list that includes variables describing
+    which traits are the same/different.
+    """
+
+    title_same = guess.title == answer.title #Boolean
+    artist_same = guess.artist == answer.artist #Boolean
+
+    date_updown = guess.release_date == answer.release_date #True if same
+    if guess.release_date > answer.release_date:
+        date_updown = "down"
+    if guess.release_date < answer.release_date:
+        date_updown = "up"
+
+    duration_updown = guess.duration == answer.duration #True if same
+    if guess.duration > answer.duration:
+        duration_updown = "down"
+    if guess.duration < answer.duration:
+        duration_updown = "up"
+    
+    explicit_same = guess.is_explicit == answer.is_explicit #Boolean
+
+    ranking_updown = guess.ranking == answer.ranking #Boolean
+    if guess.ranking > answer.ranking:
+        ranking_updown = "up"
+    if guess.ranking < answer.ranking:
+        ranking_updown = "down"
+
+    compared = {
+                'title':title_same,
+                'artist':artist_same,
+                'release_date':date_updown,
+                'duration':duration_updown,
+                'explicit':explicit_same,
+                'ranking':ranking_updown
+    }
+    return compared
