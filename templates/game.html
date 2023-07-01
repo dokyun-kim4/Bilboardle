@@ -11,25 +11,40 @@
     
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
         rel="stylesheet" type="text/css" />  
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='game.css') }}">
 </head>
 <body>
     <h1>Make a guess</h1>
-    <input type="text" id="tags">
+    <form id="guess-form">
+      <input type="text" id="guess-input" name="guess" required>
+      <input type="submit" value="Submit">
+    </form>
+    
+    <div class="row">
+      <div class="rect">Artist</div>
+      <div class="rect">Duration</div>
+      <div class="rect">Explicit</div>
+      <div class="rect">Ranking</div>
+      <div class="rect">Release Date</div>
+      <div class="rect">Title</div>
+    </div>
+
+
+    <div id="result"></div>
     
     <script>
-  $( function() {
-    var availableTags = [
-        {% for song in songs %}
-            "{{song['name']|safe}}",
-        {% endfor %}
-        ];
-    $( "#tags" ).autocomplete({
-      source: availableTags,
-      html:true
-    })
-
-    });
-
-  </script>    
+      $( function() {
+        var availableTags = [
+            {% for name in names %}
+                "{{name|safe}}",
+            {% endfor %}
+            ];
+        $( "#guess-input" ).autocomplete({
+          source: availableTags,
+          html:true
+        })
+        });
+    </script> 
 </body>
+<script src="{{ url_for('static', filename='game.js') }}?v=2"></script>
 </html>
