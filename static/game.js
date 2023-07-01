@@ -31,30 +31,29 @@ function updatePage(result) {
 
     // resultDiv.textContent = ""; // Clear previous result
 
-    for (let i = 0; i < result.length; i++) {
-        const dictionary = result[i];
-        const rowDiv = document.createElement("div");
-        rowDiv.classList.add("row")
+    const dictionary = result;
+    const rowDiv = document.createElement("div");
+    rowDiv.classList.add("row")
 
-        for (const key in dictionary) {
-            const valueDiv = document.createElement("div");
-            valueDiv.classList.add("square");
+    for (const key in dictionary) {
+        const valueDiv = document.createElement("div");
+        valueDiv.classList.add("square");
 
-            if (dictionary[key][1] === true) {
-                valueDiv.style.backgroundColor = "green";
-            }
-            else if (dictionary[key][1] == false) {
-                valueDiv.style.backgroundColor = "red";
-            }
-            else {
-                valueDiv.style.backgroundColor = "orange";
-            }
-
-            valueDiv.textContent = dictionary[key][0];
-            rowDiv.appendChild(valueDiv);
-            rowDiv.appendChild(document.createTextNode(" "));
+        if (dictionary[key][1] === true) {
+            valueDiv.style.backgroundColor = "green";
+        }
+        else if (dictionary[key][1] == false) {
+            valueDiv.style.backgroundColor = "red";
+        }
+        else {
+            valueDiv.style.backgroundColor = "orange";
         }
 
-        resultDiv.appendChild(rowDiv);
+        valueDiv.textContent = dictionary[key][0];
+        rowDiv.appendChild(valueDiv);
+        rowDiv.appendChild(document.createTextNode(" "));
     }
+
+    resultDiv.appendChild(rowDiv);
 }
+
