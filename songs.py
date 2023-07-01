@@ -194,3 +194,22 @@ def save_songlist(songlist:list):
 
     with open("song_list.json","w") as file:
         file.write(json_txt)
+
+def load_songlist():
+    songs_txt = open('song_list.json')
+
+    songs = json.load(songs_txt)
+
+    songlist = [
+                song(
+                    title=entry['title'],
+                    artist=entry['artist'],
+                    #convert string back to datetime obj
+                    release_date=entry['release_date'],
+                    duration=entry['duration'],
+                    explicit=entry['explicit'],
+                    ranking=entry['ranking']
+                )
+        for entry in songs
+    ]
+    return songlist
