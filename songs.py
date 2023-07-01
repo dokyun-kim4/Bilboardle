@@ -1,4 +1,5 @@
 import os
+import json
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
@@ -13,8 +14,8 @@ spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.getenv('ID'),
                                                scope="playlist-modify-private")
 )
 
-URL = 'https://www.billboard.com/charts/hot-100/'
-      
+# URL = 'https://www.billboard.com/charts/hot-100/'
+URL = 'https://www.billboard.com/charts/hot-100/2022-05-19/'    
 
 class song:
     def __init__(self,title:str,artist:str,release_date:str,duration:int,explicit:bool,ranking:int):
@@ -93,8 +94,8 @@ def compile_songinfo(songs_and_artists):
         of information about the song
         """
         #Possible fix for long artist names due to featuring messing up search
-        if len(artist) > 14:
-          artist=artist[:14]
+        if len(artist) > 15:
+          artist=artist[:15]
 
         query = spotify.search(
                           q=title+" "+artist,
@@ -107,6 +108,7 @@ def compile_songinfo(songs_and_artists):
     for idx, pair in enumerate(songs_and_artists):
         title = pair['name']
         artist = pair['artist']
+        print(title)
         curr_song = search_song(title=title,artist=artist)
         songList.append(
                         song(
@@ -162,7 +164,7 @@ def compare_song(guess:song,answer:song):
 
 def song_from_name(query:str,songlist:list)->song:
     """
-    Returns the song object in a list of song object based on title
+    Returns the song object in a list of songs based on title
     """
 
     names = [value.title for value in songlist]
@@ -172,3 +174,23 @@ def song_from_name(query:str,songlist:list)->song:
             idx=i
     
     return songlist[idx]
+
+
+def save_songlist(songlist:list):
+    songs = [
+        {
+            "title":entry.title,
+            "artist":entry.artist,
+            #Convert datetime object back to string to jsonify
+            "release_date":str(entry.release_date)[0:10],
+            "duration":entry.duration,
+            "explicit":entry.is_explicit,
+            "ranking":entry.ranking         
+         }
+         for entry in songlist
+    ]
+
+    json_txt = json.dumps(songs,indent=4)
+
+    with open("song_list.json","w") as file:
+        file.write(json_txt)
