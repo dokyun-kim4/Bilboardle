@@ -41,15 +41,21 @@ function updatePage(result) {
 
         if (dictionary[key][1] === true) {
             valueDiv.style.backgroundColor = "green";
+            valueDiv.textContent = dictionary[key][0];
         }
         else if (dictionary[key][1] == false) {
             valueDiv.style.backgroundColor = "red";
+            valueDiv.textContent = dictionary[key][0];
+        }
+        else if (dictionary[key][1] == "up") {
+            valueDiv.style.backgroundColor = "orange";
+            valueDiv.textContent = dictionary[key][0] + " ⬆";
         }
         else {
             valueDiv.style.backgroundColor = "orange";
+            valueDiv.textContent = dictionary[key][0] + " ⬇";
         }
 
-        valueDiv.textContent = dictionary[key][0];
         rowDiv.appendChild(valueDiv);
         rowDiv.appendChild(document.createTextNode(" "));
     }
