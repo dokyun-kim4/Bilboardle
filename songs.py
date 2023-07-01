@@ -151,11 +151,11 @@ def compare_song(guess:song,answer:song):
         ranking_updown = "down"
 
     compared = {
-                'title':title_same,
-                'artist':artist_same,
-                'release_date':date_updown,
-                'duration':duration_updown,
-                'explicit':explicit_same,
-                'ranking':ranking_updown
+                'title':[guess.title,title_same],
+                'artist':[guess.artist,artist_same],
+                'release_date':[guess.release_date,date_updown],
+                'duration':[guess.duration,duration_updown],
+                'explicit':[guess.is_explicit,explicit_same],
+                'ranking':[guess.ranking,ranking_updown]
     }
     return compared
