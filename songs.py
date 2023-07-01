@@ -159,3 +159,16 @@ def compare_song(guess:song,answer:song):
                 'ranking':[guess.ranking,ranking_updown]
     }
     return compared
+
+def song_from_name(query:str,songlist:list)->song:
+    """
+    Returns the song object in a list of song object based on title
+    """
+
+    names = [value.title for value in songlist]
+    idx = None
+    for i,name in enumerate(names):
+        if name == query:
+            idx=i
+    
+    return songlist[idx]
