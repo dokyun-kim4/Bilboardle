@@ -6,6 +6,20 @@ h1 {
     margin-top: 50px;
 }
 
+.rect {
+    width: 125px;
+    height: 80px;
+    background-color: #ffffff;
+    display: inline-block;
+    text-align: top;
+    line-height: 100px;
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
 
 .square {
     width: 125px;
