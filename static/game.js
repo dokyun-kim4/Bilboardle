@@ -34,7 +34,7 @@ function updatePage(result) {
     for (let i = 0; i < result.length; i++) {
         const dictionary = result[i];
         const rowDiv = document.createElement("div");
-        resultDiv.classList.add("row")
+        rowDiv.classList.add("row")
 
         for (const key in dictionary) {
             const valueDiv = document.createElement("div");
