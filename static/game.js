@@ -39,13 +39,21 @@ function updatePage(result) {
         const valueDiv = document.createElement("div");
         valueDiv.classList.add("square");
 
-        if (dictionary[key][1] === true) {
+        if (dictionary[key][1] == true) {
             valueDiv.style.backgroundColor = "green";
             valueDiv.textContent = dictionary[key][0];
         }
         else if (dictionary[key][1] == false) {
             valueDiv.style.backgroundColor = "red";
             valueDiv.textContent = dictionary[key][0];
+        }
+        else if (dictionary[key][1] == "up" && key == "duration") {
+            valueDiv.style.backgroundColor = "orange";
+            valueDiv.textContent = Math.floor(dictionary[key][0] / 60000) + ":" + Math.round(dictionary[key][0] / 1000 % 60) + " ⬆";
+        }
+        else if (dictionary[key][1] == "down" && key == "duration") {
+            valueDiv.style.backgroundColor = "orange";
+            valueDiv.textContent = Math.floor(dictionary[key][0] / 60000) + ":" + Math.round(dictionary[key][0] / 1000 % 60) + " ⬇";
         }
         else if (dictionary[key][1] == "up") {
             valueDiv.style.backgroundColor = "orange";
