@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Last Night",
+        "artist": "Morgan Wallen",
+        "release_date": "2023-01-31",
+        "duration": 163854,
+        "explicit": true,
+        "ranking": 1
+    },
+    {
+        "title": "Fast Car",
+        "artist": "Luke Combs",
+        "release_date": "2023-03-24",
+        "duration": 265493,
+        "explicit": false,
+        "ranking": 2
+    },
+    {
+        "title": "Calm Down (with Selena Gomez)",
+        "artist": "Rema",
+        "release_date": "2023-04-27",
+        "duration": 239317,
+        "explicit": false,
+        "ranking": 3
+    },
+    {
+        "title": "Flowers",
+        "artist": "Miley Cyrus",
+        "release_date": "2023-01-13",
+        "duration": 200454,
+        "explicit": false,
+        "ranking": 4
+    },
+    {
+        "title": "All My Life (feat. J. Cole)",
+        "artist": "Lil Durk",
+        "release_date": "2023-05-12",
+        "duration": 223878,
+        "explicit": true,
+        "ranking": 5
+    },
+    {
+        "title": "Favorite Song",
+        "artist": "Toosii",
+        "release_date": "2023-02-17",
+        "duration": 208630,
+        "explicit": false,
+        "ranking": 6
+    },
+    {
+        "title": "Karma (feat. Ice Spice)",
+        "artist": "Taylor Swift",
+        "release_date": "2023-05-26",
+        "duration": 201493,
+        "explicit": true,
+        "ranking": 7
+    },
+    {
+        "title": "Kill Bill",
+        "artist": "SZA",
+        "release_date": "2022-12-08",
+        "duration": 153946,
+        "explicit": false,
+        "ranking": 8
+    },
+    {
+        "title": "Creepin' (with The Weeknd & 21 Savage)",
+        "artist": "Metro Boomin",
+        "release_date": "2022-12-02",
+        "duration": 221520,
+        "explicit": true,
+        "ranking": 9
+    },
+    {
+        "title": "Ella Baila Sola",
+        "artist": "Eslabon Armado",
+        "release_date": "2023-03-16",
+        "duration": 165671,
+        "explicit": false,
+        "ranking": 10
+    },
+    {
+        "title": "Sure Thing",
+        "artist": "Miguel",
+        "release_date": "2010-11-26",
+        "duration": 195373,
+        "explicit": false,
+        "ranking": 11
+    },
+    {
+        "title": "Anti-Hero",
+        "artist": "Taylor Swift",
+        "release_date": "2022-10-21",
+        "duration": 200690,
+        "explicit": false,
+        "ranking": 12
+    },
+    {
+        "title": "Snooze",
+        "artist": "SZA",
+        "release_date": "2022-12-09",
+        "duration": 201800,
+        "explicit": true,
+        "ranking": 13
+    },
+    {
+        "title": "Something in the Orange",
+        "artist": "Zach Bryan",
+        "release_date": "2022-04-22",
+        "duration": 228013,
+        "explicit": false,
+        "ranking": 14
+    },
+    {
+        "title": "The Weeknd & Ariana Grande - Die For You (Piano)",
+        "artist": "Chill Beats Radio",
+        "release_date": "2023-04-06",
+        "duration": 231844,
+        "explicit": false,
+        "ranking": 15
+    },
+    {
+        "title": "fukumean",
+        "artist": "Gunna",
+        "release_date": "2023-06-16",
+        "duration": 125040,
+        "explicit": true,
+        "ranking": 16
+    },
+    {
+        "title": "Need A Favor",
+        "artist": "Jelly Roll",
+        "release_date": "2023-06-02",
+        "duration": 197400,
+        "explicit": false,
+        "ranking": 17
+    },
+    {
+        "title": "Cruel Summer",
+        "artist": "Taylor Swift",
+        "release_date": "2019-08-23",
+        "duration": 178426,
+        "explicit": false,
+        "ranking": 18
+    },
+    {
+        "title": "La Bebe - Remix",
+        "artist": "Yng Lvcas",
+        "release_date": "2023-03-17",
+        "duration": 234352,
+        "explicit": true,
+        "ranking": 19
+    },
+    {
+        "title": "You Proof",
+        "artist": "Morgan Wallen",
+        "release_date": "2023-03-03",
+        "duration": 157477,
+        "explicit": false,
+        "ranking": 20
+    },
+    {
+        "title": "un x100to",
+        "artist": "Grupo Frontera",
+        "release_date": "2023-04-17",
+        "duration": 194563,
+        "explicit": false,
+        "ranking": 21
+    },
+    {
+        "title": "Thinkin\u2019 Bout Me",
+        "artist": "Morgan Wallen",
+        "release_date": "2023-03-03",
+        "duration": 177387,
+        "explicit": false,
+        "ranking": 22
+    },
+    {
+        "title": "Rock and A Hard Place",
+        "artist": "Bailey Zimmerman",
+        "release_date": "2023-05-12",
+        "duration": 207540,
+        "explicit": false,
+        "ranking": 23
+    },
+    {
+        "title": "Cupid - Twin Ver.",
+        "artist": "FIFTY FIFTY",
+        "release_date": "2023-02-24",
+        "duration": 174253,
+        "explicit": false,
+        "ranking": 24
+    },
+    {
+        "title": "Search & Rescue",
+        "artist": "Drake",
+        "release_date": "2023-04-07",
+        "duration": 272112,
+        "explicit": true,
+        "ranking": 25
+    },
+    {
+        "title": "Chemical",
+        "artist": "Post Malone",
+        "release_date": "2023-04-14",
+        "duration": 184013,
+        "explicit": true,
+        "ranking": 26
+    },
+    {
+        "title": "Eyes Closed",
+        "artist": "Ed Sheeran",
+        "release_date": "2023-03-24",
+        "duration": 194848,
+        "explicit": false,
+        "ranking": 27
+    },
+    {
+        "title": "Next Thing You Know",
+        "artist": "Jordan Davis",
+        "release_date": "2022-08-12",
+        "duration": 175237,
+        "explicit": false,
+        "ranking": 28
+    },
+    {
+        "title": "back to the moon",
+        "artist": "Gunna",
+        "release_date": "2023-06-16",
+        "duration": 193333,
+        "explicit": true,
+        "ranking": 29
+    },
+    {
+        "title": "WHERE SHE GOES",
+        "artist": "Bad Bunny",
+        "release_date": "2023-05-18",
+        "duration": 231704,
+        "explicit": true,
+        "ranking": 30
+    },
+    {
+        "title": "Attention",
+        "artist": "Doja Cat",
+        "release_date": "2023-06-16",
+        "duration": 277043,
+        "explicit": true,
+        "ranking": 31
+    },
+    {
+        "title": "I'm Good (Blue)",
+        "artist": "David Guetta",
+        "release_date": "2022-08-26",
+        "duration": 175238,
+        "explicit": true,
+        "ranking": 32
+    },
+    {
+        "title": "Thought You Should Know",
+        "artist": "Morgan Wallen",
+        "release_date": "2023-03-03",
+        "duration": 215571,
+        "explicit": true,
+        "ranking": 33
+    },
+    {
+        "title": "Dance The Night (From Barbie The Album)",
+        "artist": "Dua Lipa",
+        "release_date": "2023-05-25",
+        "duration": 176579,
+        "explicit": false,
+        "ranking": 34
+    },
+    {
+        "title": "Dancin\u2019 In The Country",
+        "artist": "Tyler Hubbard",
+        "release_date": "2023-01-27",
+        "duration": 179640,
+        "explicit": false,
+        "ranking": 35
+    },
+    {
+        "title": "Religiously",
+        "artist": "Bailey Zimmerman",
+        "release_date": "2023-05-12",
+        "duration": 178723,
+        "explicit": false,
+        "ranking": 36
+    },
+    {
+        "title": "Boy's a Liar Pt. 2",
+        "artist": "PinkPantheress",
+        "release_date": "2023-02-03",
+        "duration": 131013,
+        "explicit": false,
+        "ranking": 37
+    },
+    {
+        "title": "Memory Lane",
+        "artist": "Old Dominion",
+        "release_date": "2023-01-05",
+        "duration": 172480,
+        "explicit": false,
+        "ranking": 38
+    },
+    {
+        "title": "Put It On Da Floor Again (feat. Cardi B)",
+        "artist": "Latto",
+        "release_date": "2023-06-02",
+        "duration": 185748,
+        "explicit": true,
+        "ranking": 39
+    },
+    {
+        "title": "Area Codes",
+        "artist": "Kaliii",
+        "release_date": "2023-03-17",
+        "duration": 139325,
+        "explicit": true,
+        "ranking": 40
+    },
+    {
+        "title": "Stand By Me (feat. Morgan Wallen)",
+        "artist": "Lil Durk",
+        "release_date": "2023-05-26",
+        "duration": 219173,
+        "explicit": true,
+        "ranking": 41
+    },
+    {
+        "title": "rodeo dr",
+        "artist": "Gunna",
+        "release_date": "2023-06-16",
+        "duration": 176946,
+        "explicit": true,
+        "ranking": 42
+    },
+    {
+        "title": "Tennessee Orange",
+        "artist": "Megan Moroney",
+        "release_date": "2023-05-05",
+        "duration": 223119,
+        "explicit": false,
+        "ranking": 43
+    },
+    {
+        "title": "Shakira: Bzrp Music Sessions, Vol. 53",
+        "artist": "Bizarrap",
+        "release_date": "2023-01-11",
+        "duration": 214945,
+        "explicit": false,
+        "ranking": 44
+    },
+    {
+        "title": "Love You Anyway",
+        "artist": "Luke Combs",
+        "release_date": "2023-02-10",
+        "duration": 229626,
+        "explicit": false,
+        "ranking": 45
+    },
+    {
+        "title": "Last Night",
+        "artist": "Morgan Wallen",
+        "release_date": "2023-03-03",
+        "duration": 163854,
+        "explicit": true,
+        "ranking": 46
+    },
+    {
+        "title": "TQM",
+        "artist": "Fuerza Regida",
+        "release_date": "2023-05-19",
+        "duration": 158965,
+        "explicit": true,
+        "ranking": 47
+    },
+    {
+        "title": "Players",
+        "artist": "Coi Leray",
+        "release_date": "2022-11-30",
+        "duration": 139560,
+        "explicit": true,
+        "ranking": 48
+    },
+    {
+        "title": "Under The Influence",
+        "artist": "Chris Brown",
+        "release_date": "2019-10-04",
+        "duration": 184613,
+        "explicit": true,
+        "ranking": 49
+    },
+    {
+        "title": "Thank God",
+        "artist": "Kane Brown",
+        "release_date": "2022-09-09",
+        "duration": 174560,
+        "explicit": false,
+        "ranking": 50
+    },
+    {
+        "title": "back at it",
+        "artist": "Gunna",
+        "release_date": "2023-06-16",
+        "duration": 186173,
+        "explicit": true,
+        "ranking": 51
+    },
+    {
+        "title": "bread & butter",
+        "artist": "Gunna",
+        "release_date": "2023-06-02",
+        "duration": 226360,
+        "explicit": true,
+        "ranking": 52
+    },
+    {
+        "title": "O\u0161tro",
+        "artist": "30Zona",
+        "release_date": "2022-01-20",
+        "duration": 160689,
+        "explicit": true,
+        "ranking": 53
+    },
+    {
+        "title": "Bye",
+        "artist": "Peso Pluma",
+        "release_date": "2023-05-26",
+        "duration": 212976,
+        "explicit": true,
+        "ranking": 54
+    },
+    {
+        "title": "Calling (Spider-Man: Across the Spider-Verse) (Metro Boomin & Swae Lee, NAV, feat. A Boogie Wit da Hoodie)",
+        "artist": "Metro Boomin",
+        "release_date": "2023-06-02",
+        "duration": 219453,
+        "explicit": false,
+        "ranking": 55
+    },
+    {
+        "title": "Daylight",
+        "artist": "David Kushner",
+        "release_date": "2023-04-14",
+        "duration": 212953,
+        "explicit": false,
+        "ranking": 56
+    },
+    {
+        "title": "What It Is (Solo Version)",
+        "artist": "Doechii",
+        "release_date": "2023-03-17",
+        "duration": 189824,
+        "explicit": true,
+        "ranking": 57
+    },
+    {
+        "title": "Annihilate (Spider-Man: Across the Spider-Verse) (Metro Boomin & Swae Lee, Lil Wayne, Offset)",
+        "artist": "Metro Boomin",
+        "release_date": "2023-06-02",
+        "duration": 231746,
+        "explicit": false,
+        "ranking": 58
+    },
+    {
+        "title": "Bury Me in Georgia - Single Edit",
+        "artist": "Kane Brown",
+        "release_date": "2023-03-31",
+        "duration": 170682,
+        "explicit": false,
+        "ranking": 59
+    },
+    {
+        "title": "ca$h $hit",
+        "artist": "Gunna",
+        "release_date": "2023-06-16",
+        "duration": 131493,
+        "explicit": true,
+        "ranking": 60
+    },
+    {
+        "title": "Self Love (Spider-Man: Across the Spider-Verse) (Metro Boomin & Coi Leray)",
+        "artist": "Metro Boomin",
+        "release_date": "2023-06-02",
+        "duration": 189466,
+        "explicit": false,
+        "ranking": 61
+    },
+    {
+        "title": "bottom",
+        "artist": "Gunna",
+        "release_date": "2023-06-16",
+        "duration": 177346,
+        "explicit": true,
+        "ranking": 62
+    },
+    {
+        "title": "It Matters To Her",
+        "artist": "Scotty McCreery",
+        "release_date": "2021-09-17",
+        "duration": 171880,
+        "explicit": false,
+        "ranking": 63
+    },
+    {
+        "title": "Dial Drunk",
+        "artist": "Noah Kahan",
+        "release_date": "2023-06-09",
+        "duration": 213817,
+        "explicit": true,
+        "ranking": 64
+    },
+    {
+        "title": "PRC",
+        "artist": "Peso Pluma",
+        "release_date": "2023-01-23",
+        "duration": 184066,
+        "explicit": true,
+        "ranking": 65
+    },
+    {
+        "title": "Por las Noches",
+        "artist": "Peso Pluma",
+        "release_date": "2021-06-11",
+        "duration": 239845,
+        "explicit": false,
+        "ranking": 66
+    },
+    {
+        "title": "Mourning",
+        "artist": "Post Malone",
+        "release_date": "2023-05-19",
+        "duration": 147819,
+        "explicit": true,
+        "ranking": 67
+    },
+    {
+        "title": "Am I Dreaming (Metro Boomin & A$AP Rocky, Roisee)",
+        "artist": "Metro Boomin",
+        "release_date": "2023-06-02",
+        "duration": 256026,
+        "explicit": false,
+        "ranking": 68
+    },
+    {
+        "title": "Waffle House",
+        "artist": "Jonas Brothers",
+        "release_date": "2023-04-07",
+        "duration": 145440,
+        "explicit": false,
+        "ranking": 69
+    },
+    {
+        "title": "See You Again (feat. Kali Uchis)",
+        "artist": "Tyler, The Creator",
+        "release_date": "2017-07-21",
+        "duration": 180386,
+        "explicit": true,
+        "ranking": 70
+    },
+    {
+        "title": "TQG",
+        "artist": "KAROL G",
+        "release_date": "2023-02-23",
+        "duration": 198360,
+        "explicit": true,
+        "ranking": 71
+    },
+    {
+        "title": "Your Heart Or Mine",
+        "artist": "Jon Pardi",
+        "release_date": "2022-09-02",
+        "duration": 161200,
+        "explicit": false,
+        "ranking": 72
+    },
+    {
+        "title": "Peaches & Eggplants (feat. 21 Savage)",
+        "artist": "Young Nudy",
+        "release_date": "2023-02-27",
+        "duration": 203813,
+        "explicit": true,
+        "ranking": 73
+    },
+    {
+        "title": "El Azul",
+        "artist": "Junior H",
+        "release_date": "2023-02-10",
+        "duration": 187225,
+        "explicit": false,
+        "ranking": 74
+    },
+    {
+        "title": "You, Me, And Whiskey",
+        "artist": "Justin Moore",
+        "release_date": "2022-10-07",
+        "duration": 187941,
+        "explicit": false,
+        "ranking": 75
+    },
+    {
+        "title": "idk nomore",
+        "artist": "Gunna",
+        "release_date": "2023-06-16",
+        "duration": 179480,
+        "explicit": true,
+        "ranking": 76
+    },
+    {
+        "title": "p angels",
+        "artist": "Gunna",
+        "release_date": "2023-06-16",
+        "duration": 176160,
+        "explicit": true,
+        "ranking": 77
+    },
+    {
+        "title": "Cowgirls (feat. ERNEST)",
+        "artist": "Morgan Wallen",
+        "release_date": "2023-03-03",
+        "duration": 181621,
+        "explicit": false,
+        "ranking": 78
+    },
+    {
+        "title": "Baby Don't Hurt Me",
+        "artist": "David Guetta",
+        "release_date": "2023-04-06",
+        "duration": 140017,
+        "explicit": false,
+        "ranking": 79
+    },
+    {
+        "title": "Popular (with Playboi Carti & Madonna) - Music from the HBO Original Series",
+        "artist": "The Weeknd",
+        "release_date": "2023-06-02",
+        "duration": 215466,
+        "explicit": true,
+        "ranking": 80
+    },
+    {
+        "title": "Fight The Feeling",
+        "artist": "Rod Wave",
+        "release_date": "2023-03-31",
+        "duration": 160714,
+        "explicit": true,
+        "ranking": 81
+    },
+    {
+        "title": "SLUT ME OUT",
+        "artist": "NLE Choppa",
+        "release_date": "2022-04-22",
+        "duration": 123672,
+        "explicit": true,
+        "ranking": 82
+    },
+    {
+        "title": "paybach",
+        "artist": "Gunna",
+        "release_date": "2023-06-16",
+        "duration": 173533,
+        "explicit": true,
+        "ranking": 83
+    },
+    {
+        "title": "PLEBADA",
+        "artist": "El Alfa",
+        "release_date": "2023-06-24",
+        "duration": 221739,
+        "explicit": false,
+        "ranking": 84
+    },
+    {
+        "title": "Save Me (with Lainey Wilson)",
+        "artist": "Jelly Roll",
+        "release_date": "2023-06-02",
+        "duration": 237493,
+        "explicit": false,
+        "ranking": 85
+    },
+    {
+        "title": "Fr\u00e1gil",
+        "artist": "Yahritza Y Su Esencia",
+        "release_date": "2023-04-07",
+        "duration": 160517,
+        "explicit": false,
+        "ranking": 86
+    },
+    {
+        "title": "Jaded",
+        "artist": "Miley Cyrus",
+        "release_date": "2023-03-10",
+        "duration": 185933,
+        "explicit": true,
+        "ranking": 87
+    },
+    {
+        "title": "ICU",
+        "artist": "Coco Jones",
+        "release_date": "2022-11-04",
+        "duration": 241624,
+        "explicit": false,
+        "ranking": 88
+    },
+    {
+        "title": "TRUCK BED",
+        "artist": "HARDY",
+        "release_date": "2023-01-20",
+        "duration": 167534,
+        "explicit": true,
+        "ranking": 89
+    },
+    {
+        "title": "Ain\u2019t That Some",
+        "artist": "Morgan Wallen",
+        "release_date": "2023-03-03",
+        "duration": 158003,
+        "explicit": true,
+        "ranking": 90
+    },
+    {
+        "title": "SHAKE SUMN",
+        "artist": "DaBaby",
+        "release_date": "2023-05-05",
+        "duration": 124805,
+        "explicit": true,
+        "ranking": 91
+    },
+    {
+        "title": "TRUSTFALL",
+        "artist": "P!nk",
+        "release_date": "2023-01-27",
+        "duration": 237200,
+        "explicit": false,
+        "ranking": 92
+    },
+    {
+        "title": "People",
+        "artist": "Libianca",
+        "release_date": "2022-12-06",
+        "duration": 184791,
+        "explicit": false,
+        "ranking": 93
+    },
+    {
+        "title": "go crazy",
+        "artist": "Gunna",
+        "release_date": "2023-06-16",
+        "duration": 173360,
+        "explicit": true,
+        "ranking": 94
+    },
+    {
+        "title": "Becky G",
+        "artist": "\u017delvy ganja",
+        "release_date": "2023-06-29",
+        "duration": 170830,
+        "explicit": true,
+        "ranking": 95
+    },
+    {
+        "title": "Angel Pt. 1 (feat. Jimin of BTS, JVKE & Muni Long)",
+        "artist": "Fast & Furious: The Fast Saga",
+        "release_date": "2023-05-17",
+        "duration": 175802,
+        "explicit": false,
+        "ranking": 96
+    },
+    {
+        "title": "Girl In Mine",
+        "artist": "Parmalee",
+        "release_date": "2022-08-12",
+        "duration": 155120,
+        "explicit": false,
+        "ranking": 97
+    },
+    {
+        "title": "Moonlight",
+        "artist": "Kali Uchis",
+        "release_date": "2023-03-03",
+        "duration": 187723,
+        "explicit": false,
+        "ranking": 98
+    },
+    {
+        "title": "Classy 101",
+        "artist": "Feid",
+        "release_date": "2023-03-31",
+        "duration": 195986,
+        "explicit": true,
+        "ranking": 99
+    },
+    {
+        "title": "Bluffin (feat. Lil Baby)",
+        "artist": "Gucci Mane",
+        "release_date": "2023-06-16",
+        "duration": 148302,
+        "explicit": true,
+        "ranking": 100
+    }
+]
