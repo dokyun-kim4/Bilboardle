@@ -16,7 +16,7 @@ spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.getenv('ID'),
 )
 
 # URL = 'https://www.billboard.com/charts/hot-100/'
-URL = 'https://www.billboard.com/charts/hot-100/2022-05-19/'    
+URL = 'https://www.billboard.com/charts/hot-100/2023-07-01/'    
 
 class song:
     def __init__(self,title:str,artist:str,release_date:str,duration:int,explicit:bool,ranking:int):
