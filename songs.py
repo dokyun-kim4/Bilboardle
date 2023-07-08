@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 import requests as rq
 import datetime
+import time
 load_dotenv()
 
 spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.getenv('ID'),
@@ -152,11 +153,14 @@ def compare_song(guess:song,answer:song):
     if guess.ranking < answer.ranking:
         ranking_updown = "down"
 
+    minsec = str(datetime.timedelta(seconds=guess.duration//1000))[2:]
+    ymd = (guess.release_date).strftime('%F')
+
     compared = {
                 'title':[guess.title,title_same],
                 'artist':[guess.artist,artist_same],
-                'release_date':[guess.release_date,date_updown],
-                'duration':[guess.duration,duration_updown],
+                'release_date':[ymd,date_updown],
+                'duration':[minsec,duration_updown],
                 'explicit':[guess.is_explicit,explicit_same],
                 'ranking':[guess.ranking,ranking_updown]
     }
