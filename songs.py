@@ -15,7 +15,7 @@ spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.getenv('ID'),
                                                scope="playlist-modify-private")
 )
 
-# URL = 'https://www.billboard.com/charts/hot-100/'
+# ToDo: Make it update automatically
 URL = 'https://www.billboard.com/charts/hot-100/2023-07-01/'    
 
 class song:
@@ -82,7 +82,7 @@ def get_bilboard()->list:
     return top_100
 
 
-def compile_songinfo(songs_and_artists):
+def compile_songinfo(songs_and_artists)->list:
     """
     Takes list of {'name':song title, 'artist':artist name}, and creates a 
     list of `song` objects with more info about the song
@@ -124,7 +124,71 @@ def compile_songinfo(songs_and_artists):
     return songList
 
 
-def compare_song(guess:song,answer:song):
+def song_from_name(query:str,songlist:list)->song:
+    """
+    Returns the song object in a list of songs based on title
+    """
+
+    names = [value.title for value in songlist]
+    idx = None
+    for i,name in enumerate(names):
+        if name == query:
+            idx=i
+    
+    return songlist[idx]
+
+
+def save_songlist(songlist:list):
+    """
+    Given a list of song objects, save it as a json file
+    """
+    songs = [
+        {
+            "title":entry.title,
+            "artist":entry.artist,
+            #Convert datetime object back to string to jsonify
+            "release_date":str(entry.release_date)[0:10],
+            "duration":entry.duration,
+            "explicit":entry.is_explicit,
+            "ranking":entry.ranking         
+         }
+         for entry in songlist
+    ]
+
+    json_txt = json.dumps(songs,indent=4)
+
+    with open("song_list.json","w") as file:
+        file.write(json_txt)
+
+def load_songlist()->list:
+    """
+    Read from 'song_list.json' and convert to list of song objects
+    If json doesn't exist, create one before converting
+    """
+    try:
+        songs_txt = open('song_list.json')
+    except FileNotFoundError:
+        save_songlist(compile_songinfo(get_bilboard()))
+        songs_txt = open('song_list.json')
+
+    songs = json.load(songs_txt)
+
+    songlist = [
+                song(
+                    title=entry['title'],
+                    artist=entry['artist'],
+                    #convert string back to datetime obj
+                    release_date=entry['release_date'],
+                    duration=entry['duration'],
+                    explicit=entry['explicit'],
+                    ranking=entry['ranking']
+                )
+        for entry in songs
+    ]
+    return songlist
+
+
+def compare_song(guess:song,answer:song)->dict:
     """
     Compares two songs and returns a list that includes variables describing
     which traits are the same/different.
@@ -165,55 +229,3 @@ def compare_song(guess:song,answer:song):
                 'ranking':[guess.ranking,ranking_updown]
     }
     return compared
-
-def song_from_name(query:str,songlist:list)->song:
-    """
-    Returns the song object in a list of songs based on title
-    """
-
-    names = [value.title for value in songlist]
-    idx = None
-    for i,name in enumerate(names):
-        if name == query:
-            idx=i
-    
-    return songlist[idx]
-
-
-def save_songlist(songlist:list):
-    songs = [
-        {
-            "title":entry.title,
-            "artist":entry.artist,
-            #Convert datetime object back to string to jsonify
-            "release_date":str(entry.release_date)[0:10],
-            "duration":entry.duration,
-            "explicit":entry.is_explicit,
-            "ranking":entry.ranking         
-         }
-         for entry in songlist
-    ]
-
-    json_txt = json.dumps(songs,indent=4)
-
-    with open("song_list.json","w") as file:
-        file.write(json_txt)
-
-def load_songlist():
-    songs_txt = open('song_list.json')
-
-    songs = json.load(songs_txt)
-
-    songlist = [
-                song(
-                    title=entry['title'],
-                    artist=entry['artist'],
-                    #convert string back to datetime obj
-                    release_date=entry['release_date'],
-                    duration=entry['duration'],
-                    explicit=entry['explicit'],
-                    ranking=entry['ranking']
-                )
-        for entry in songs
-    ]
-    return songlist
