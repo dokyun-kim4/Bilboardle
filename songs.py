@@ -16,7 +16,8 @@ spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.getenv('ID'),
 )
 
 # ToDo: Make it update automatically
-URL = 'https://www.billboard.com/charts/hot-100/2023-07-01/'    
+today = datetime.datetime.today().strftime('%Y-%m-%d')
+URL = f'https://www.billboard.com/charts/hot-100/{today}/'    
 
 class song:
     def __init__(self,title:str,artist:str,release_date:str,duration:int,explicit:bool,ranking:int):
@@ -157,19 +158,24 @@ def save_songlist(songlist:list):
 
     json_txt = json.dumps(songs,indent=4)
 
-    with open("song_list.json","w") as file:
+    with open(f"{today}.json","w") as file:
         file.write(json_txt)
 
 def load_songlist()->list:
     """
-    Read from 'song_list.json' and convert to list of song objects
+    Read from today's songlist and convert to list of song objects
     If json doesn't exist, create one before converting
+    Delete songlist from the day before
     """
-    try:
-        songs_txt = open('song_list.json')
-    except FileNotFoundError:
+    yesterday = (datetime.datetime.now() - datetime.timedelta(1)).strftime('%Y-%m-%d')
+    if os.path.exists(f"{yesterday}.json"):
+        os.remove(f"{yesterday}.json")
+
+    if os.path.exists(f"{today}.json"):
+        songs_txt = open(f'{today}.json')
+    else:
         save_songlist(compile_songinfo(get_bilboard()))
-        songs_txt = open('song_list.json')
+        songs_txt = open(f'{today}.json')
 
     songs = json.load(songs_txt)
 
