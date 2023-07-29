@@ -6,6 +6,7 @@
 # Custom
 b.ipynb
 b.py
+templates/b.html
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
