@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AutoComplete</title>
+    <title>Bilboardle</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">  
     </script>  
     
@@ -13,11 +13,16 @@
         rel="stylesheet" type="text/css" />  
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='game.css') }}">
 </head>
+
 <body>
-    <h1>Make a guess</h1>
+  <nav>
+    <h1>Billboardle</h1>
+  </nav>
     <form id="guess-form">
-      <input type="text" id="guess-input" name="guess" required>
-      <input type="submit" value="Submit">
+      <div class="form-group">
+        <input type="text" id="guess-input" placeholder="Guess a song" name="guess" required>
+        <input type="submit" value="Submit">
+      </div>
     </form>
     
     <div class="row">
@@ -25,7 +30,7 @@
       <div class="rect">Duration</div>
       <div class="rect">Explicit</div>
       <div class="rect">Ranking</div>
-      <div class="rect">Release Date</div>
+      <div class="rect">Released</div>
       <div class="rect">Title</div>
     </div>
 

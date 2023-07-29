@@ -1,9 +1,32 @@
 body {
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    margin: 0px;
 }
 
+nav {
+    border-bottom: 2px solid rgb(121, 121, 121);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
 h1 {
-    margin-top: 50px;
+    font-size: xx-large;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    padding: 8px;
+}
+
+input[type="submit"] {
+    background-color: #2134a2;
+    color: #dfdfdf;
+    border-radius: 5px;
+    padding: 8px 8px;
 }
 
 .rect {
@@ -24,11 +47,12 @@ h1 {
 .square {
     width: 125px;
     height: 125px;
+    color: rgb(0, 0, 0);
     background-color: #ccc;
     display: inline-block;
     text-align: center;
     line-height: 100px;
-    font-size: 15px;
+    font-size: 16px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -41,6 +65,5 @@ h1 {
 }
 
 #guess-input {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
 }
