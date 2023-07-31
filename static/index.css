@@ -1,11 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Passion+One:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Passion+One:wght@700&family=Rajdhani:wght@600&display=swap');
+
 
 body {
+    background-color: #93A3B1;
     font-family: 'Passion One', Arial;
     height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.welcome-logo {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .welcome-page {
@@ -18,4 +25,25 @@ body {
 .welcome-title {
     font-size: 55px;
     font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.welcome-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 30px;
+    color: #000000;
+    padding-bottom: 50px
+}
+
+.welcome-button {
+    border-radius: 8px;
+    background-color: #2134a2;
+    padding: 8px 15px;
+}
+
+a {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
 }

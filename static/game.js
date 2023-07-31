@@ -40,19 +40,19 @@ function updatePage(result) {
         valueDiv.classList.add("square");
 
         if (dictionary[key][1] == true) {
-            valueDiv.style.backgroundColor = "green";
+            valueDiv.style.backgroundColor = "#4D8B31";
             valueDiv.textContent = dictionary[key][0];
         }
         else if (dictionary[key][1] == false) {
-            valueDiv.style.backgroundColor = "red";
+            valueDiv.style.backgroundColor = "#d64045";
             valueDiv.textContent = dictionary[key][0];
         }
         else if (dictionary[key][1] == "up") {
-            valueDiv.style.backgroundColor = "orange";
+            valueDiv.style.backgroundColor = "#ED9B40";
             valueDiv.textContent = dictionary[key][0] + " ⬆";
         }
         else {
-            valueDiv.style.backgroundColor = "orange";
+            valueDiv.style.backgroundColor = "#ED9B40";
             valueDiv.textContent = dictionary[key][0] + " ⬇";
         }
 

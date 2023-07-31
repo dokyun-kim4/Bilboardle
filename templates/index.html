@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
-    <title>Document</title>
+    <title>Bilboardle</title>
 </head>
 <body>
     <div class="welcome-page">
+        <div class="welcome-logo">picture</div>
         <div class="welcome-title">Hi Bilboardler</div>
         <div class="welcome-subtitle">Ready to test your music knowledge?</div>
-        <div><a href="{{url_for('game')}}">Play</a></div>
+        <div class="welcome-button"><a href="{{url_for('game')}}">Play</a></div>
     </div>
     
 </body>
