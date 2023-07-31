@@ -15,9 +15,8 @@ spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.getenv('ID'),
                                                scope="playlist-modify-private")
 )
 
-# ToDo: Make it update automatically
 today = datetime.datetime.today().strftime('%Y-%m-%d')
-URL = f'https://www.billboard.com/charts/hot-100/{today}/'    
+   
 
 class song:
     def __init__(self,title:str,artist:str,release_date:str,duration:int,explicit:bool,ranking:int):
@@ -63,11 +62,19 @@ class song:
         return self._ranking  
 
 
-def get_bilboard()->list:
+def get_bilboard(date)->list:
     """
     Scrape current top 100 songs on bilboard.com, returns a list of dictionaries
     that are formatted {'name':song title, 'artist':artist name}
+
+    Args: 
+        date: string formatted 'YYYY-MM-DD'
+    
+    Returns:
+        top_100: list of dictionaries containing song title and artist name
     """
+
+    URL = f'https://www.billboard.com/charts/hot-100/{date}/' 
     response = rq.get(URL)
     website = response.text
 
@@ -107,10 +114,10 @@ def compile_songinfo(songs_and_artists)->list:
         song_info = query['tracks']['items'][0]
         return song_info
     
+    print("Getting song informtion...")
     for idx, pair in enumerate(songs_and_artists):
         title = pair['name']
         artist = pair['artist']
-        print(title)
         curr_song = search_song(title=title,artist=artist)
         songList.append(
                         song(
@@ -122,6 +129,7 @@ def compile_songinfo(songs_and_artists)->list:
                               ranking=idx+1
                         )
                       )
+    print("Done!")
     return songList
 
 
@@ -139,7 +147,7 @@ def song_from_name(query:str,songlist:list)->song:
     return songlist[idx]
 
 
-def save_songlist(songlist:list):
+def save_songlist(songlist:list,date):
     """
     Given a list of song objects, save it as a json file
     """
@@ -158,7 +166,7 @@ def save_songlist(songlist:list):
 
     json_txt = json.dumps(songs,indent=4)
 
-    with open(f"{today}.json","w") as file:
+    with open(f"{date}.json","w") as file:
         file.write(json_txt)
 
 def load_songlist()->list:
@@ -167,17 +175,47 @@ def load_songlist()->list:
     If json doesn't exist, create one before converting
     Delete songlist from the day before
     """
-    yesterday = (datetime.datetime.now() - datetime.timedelta(1)).strftime('%Y-%m-%d')
-    if os.path.exists(f"{yesterday}.json"):
-        os.remove(f"{yesterday}.json")
+    today_json = f"{today}.json"
 
-    if os.path.exists(f"{today}.json"):
-        songs_txt = open(f'{today}.json')
+    # Get today's bilboard chart
+    save_songlist(compile_songinfo(get_bilboard(today)),today)
+    songs = json.load(open(today_json))
+
+    # If chart is empty, get previous json
+    if songs == []:
+        old_days = [today]
+        delta_day = 1
+        while True:
+            old_day = (datetime.datetime.now() - datetime.timedelta(delta_day)).strftime('%Y-%m-%d')
+            old_days.append(old_day)
+            old_json = f"{old_day}.json"
+
+            if os.path.exists(old_json):
+                songs = json.load(open(old_json))
+                break
+            
+            # Updater
+            save_songlist(compile_songinfo(get_bilboard(old_day)),old_day)
+            songs = json.load(open(old_json))
+            if len(songs) != 0:
+                break
+
+            delta_day += 1
+        # Cleanup
+        for day in old_days[:len(old_days)-1]:
+            os.remove(f'{day}.json')
+
+    # Remove the json that was made before; could be many days off
     else:
-        save_songlist(compile_songinfo(get_bilboard()))
-        songs_txt = open(f'{today}.json')
+        delta_day = 1
+        while True:
+            old_day = (datetime.datetime.now() - datetime.timedelta(delta_day)).strftime('%Y-%m-%d')
+            old_json = f"{old_day}.json"
+            if os.path.exists(old_json):
+                os.remove(old_json)
+                break
+            delta_day += 1
 
-    songs = json.load(songs_txt)
 
     songlist = [
                 song(
@@ -235,3 +273,7 @@ def compare_song(guess:song,answer:song)->dict:
                 'ranking':[guess.ranking,ranking_updown]
     }
     return compared
+
+#---------------- PLAY WITH CUSTOM PLAYLIST -----------------------#
+def load_playlist():
+    pass
