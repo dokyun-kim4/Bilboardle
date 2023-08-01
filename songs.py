@@ -102,9 +102,6 @@ def compile_songinfo(songs_and_artists)->list:
         Search a song by title and artist using Spotify API, returns dictionary
         of information about the song
         """
-        #Possible fix for long artist names due to featuring messing up search
-        # if len(artist) > 15:
-        #   artist=artist[:15]
 
         query = spotify.search(
                           q=title,
@@ -119,11 +116,7 @@ def compile_songinfo(songs_and_artists)->list:
         title = pair['name']
         artist = pair['artist']
         curr_song = search_song(title=title,artist=artist)
-        print(curr_song['album']['release_date'])
 
-        # Some song searches just return the year
-        if len(curr_song['album']['release_date']) == 4:
-            curr_song['album']['release_date'] += "-01-01"
 
         songList.append(
                         song(
