@@ -1,13 +1,14 @@
 """
 Website for playing Bilboardle
 """
-from flask import Flask, render_template, request, jsonify
-from songs import compare_song, song_from_name,load_songlist
+from flask import Flask, render_template, request, jsonify, redirect, url_for
+from songs import compare_song, song_from_name,load_songlist, load_playlist
 import random
 
 app = Flask(__name__)
 
 #Load songs
+global songlist
 songlist = load_songlist()
 
 
@@ -24,13 +25,20 @@ def game():
     return render_template("game.html", names = song_names)
 
 # -------------- PLAYLIST MODE ----------------- #
-@app.route('/playlist')
+@app.route('/playlist',methods = ['GET','POST'])
 def playlist():
+    if request.method=='POST':
+        link = request.form['id']
+        id = link.split('https://open.spotify.com/playlist/')[1].split('?')[0]
+
+        return redirect(url_for('playlist_game',id=id))
     return render_template('playlist.html')
 
-@app.route('/playlist-game')
-def playlist_game():
-    return render_template('playlist_game.html')
+@app.route('/playlist-game/<id>')
+def playlist_game(id):
+    songlist = load_playlist(id)
+    song_names = [entry.title for entry in songlist]
+    return render_template('playlist_game.html',names=song_names)
 
 # ---------------------------------------------- #
 
