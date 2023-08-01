@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
-    <title>Bilboardle</title>
+    <title>Playlist Mode</title>
 </head>
 <body>
     <div class="welcome-page">
         
-        <div class="welcome-title">Hi Bilboardler</div>
-        <div class="welcome-subtitle">Ready to test your music knowledge?</div>
-        <div class="welcome-button"><a href="{{url_for('game')}}">Play</a></div>
-        <div class="welcome-newmode"><a href="{{url_for('playlist')}}">Playlist Mode</a></div>
+        <div class="welcome-title">Playlist Mode</div>
+        <div class="welcome-subtitle">How well do you know your playlists?</div>
+        <div class="welcome-button"><a href="{{url_for('playlist_game')}}">Play</a></div>
+        <div class="welcome-newmode"><a href="{{url_for('index')}}">Back to Bilboardle</a></div>
     </div>
     
 </body>

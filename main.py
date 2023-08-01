@@ -23,11 +23,22 @@ def game():
     song_names = [entry.title for entry in songlist]
     return render_template("game.html", names = song_names)
 
+# -------------- PLAYLIST MODE ----------------- #
+@app.route('/playlist')
+def playlist():
+    return render_template('playlist.html')
+
+@app.route('/playlist-game')
+def playlist_game():
+    return render_template('playlist_game.html')
+
+# ---------------------------------------------- #
+
 @app.route("/check_guess", methods=["POST"])
 def check_guess():
     data = request.get_json()
     title = str(data.get("guess"))  # Convert the guess to a string for comparison
-    print(title)
+    
     user_guess = song_from_name(query=title,songlist=songlist)
     
     result = compare_song(guess=user_guess,answer=answer_song)
@@ -38,5 +49,7 @@ def check_guess():
     return jsonify(response)
 
 
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
