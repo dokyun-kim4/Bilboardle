@@ -103,11 +103,11 @@ def compile_songinfo(songs_and_artists)->list:
         of information about the song
         """
         #Possible fix for long artist names due to featuring messing up search
-        if len(artist) > 15:
-          artist=artist[:15]
+        # if len(artist) > 15:
+        #   artist=artist[:15]
 
         query = spotify.search(
-                          q=title+" "+artist,
+                          q=title,
                           type='track',
                           market='US',
                           limit=1)
@@ -119,6 +119,12 @@ def compile_songinfo(songs_and_artists)->list:
         title = pair['name']
         artist = pair['artist']
         curr_song = search_song(title=title,artist=artist)
+        print(curr_song['album']['release_date'])
+
+        # Some song searches just return the year
+        if len(curr_song['album']['release_date']) == 4:
+            curr_song['album']['release_date'] += "-01-01"
+
         songList.append(
                         song(
                               title=curr_song['name'],
@@ -177,11 +183,15 @@ def load_songlist()->list:
     """
     today_json = f"{today}.json"
 
-    # Get today's bilboard chart
-    save_songlist(compile_songinfo(get_bilboard(today)),today)
-    songs = json.load(open(today_json))
+    # Get today's bilboard chart json
+    if os.path.exists(today_json):
+        songs = json.load(open(today_json))
+    # If first time playing today, make a json
+    else:
+        save_songlist(compile_songinfo(get_bilboard(today)),today)
+        songs = json.load(open(today_json))
 
-    # If chart is empty, get previous json
+    # If today's chart is empty, go back until chart is not empty
     if songs == []:
         old_days = [today]
         delta_day = 1
