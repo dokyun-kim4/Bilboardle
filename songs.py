@@ -278,21 +278,38 @@ def compare_song(guess:song,answer:song)->dict:
     return compared
 
 #---------------- CUSTOM PLAYLIST MODE-----------------------#
-def load_playlist(link)-> list:
+def load_playlist(id)-> list:
     """
     Given a spotify playlist link, return a list of song objects 
-    A link follows this format:
-        https://open.spotify.com/playlist/PLAYLISTID?si=REFERALINFO
+
 
     Args:
-        link: Spotify playlist link
+        id: Spotify playlist id
     
     Returns:
         List of song objects
     """
-    header = 'https://open.spotify.com/playlist/'
-
-    id = link.split(header)[1].split('?')[0]
         
+    playlist = spotify.playlist(playlist_id=id)
+    playlist_songs = playlist['tracks']['items']
+
+    songlist = []
+
+    print("Loading playlist...")
+    for entry in playlist_songs:
+        songlist.append(
+                        song(
+                                title = entry['track']['name'],
+                                artist = entry['track']['artists'][0]['name'],
+                                release_date = entry['track']['album']['release_date'],
+                                duration = entry['track']['duration_ms'],
+                                explicit = entry['track']['explicit'],    
+                                ranking = None                            
+                        )
+        )
+    print("Done")
     
+    return songlist
+
+
 
