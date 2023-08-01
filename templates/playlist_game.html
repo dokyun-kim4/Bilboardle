@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" /> 
+    <title>Document</title>
+</head>
+<body>
+    <form id="guess-form">
+        <div class="form-group">
+          <input type="text" id="guess-input" placeholder="Guess a song" name="guess" required>
+          <input type="submit" value="Submit">
+        </div>
+    </form>
+    <script>
+        $( function() {
+          var availableTags = [
+              {% for name in names %}
+                  "{{name|safe}}",
+              {% endfor %}
+              ];
+          $( "#guess-input" ).autocomplete({
+            source: availableTags,
+            html:true
+          })
+          });
+      </script> 
+</body>
+
+</html>

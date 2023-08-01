@@ -4,7 +4,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon_32.ico') }}" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='playlist.css') }}">
     <title>Playlist Mode</title>
 </head>
 <body>
@@ -12,8 +12,17 @@
         
         <div class="welcome-title">Playlist Mode</div>
         <div class="welcome-subtitle">How well do you know your playlists?</div>
-        <div class="welcome-button"><a href="{{url_for('playlist_game')}}">Play</a></div>
-        <div class="welcome-newmode"><a href="{{url_for('index')}}">Back to Bilboardle</a></div>
+        <div class="welcome-button">
+            <form method="POST" action="/playlist">
+                <input type="text" id='id' name="id" placeholder="Enter playlist ID" required>
+                <button type="submit">Play</button>
+            </form>
+            
+        </div>
+
+
+
+        <div class="welcome-newmode"><a href="{{url_for('home')}}">Back to Bilboardle</a></div>
     </div>
     
 </body>
