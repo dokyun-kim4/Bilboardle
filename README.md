@@ -20,5 +20,5 @@ After making a guess, the game will display if the guessed song matches any of t
 - Duration
 - Explicit?
 - Bilboard ranking (will always be green for playlist mode)
-- Release date
+- Release date (Date added for playlist mode)
 - Title
