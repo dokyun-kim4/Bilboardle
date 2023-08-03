@@ -305,7 +305,7 @@ def load_playlist(id)-> list:
                                 release_date = entry['added_at'][:10],
                                 duration = entry['track']['duration_ms'],
                                 explicit = entry['track']['explicit'],    
-                                ranking = None                            
+                                ranking = 1                            
                         )
         )
     print("Done")
