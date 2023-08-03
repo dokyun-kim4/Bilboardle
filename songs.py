@@ -209,15 +209,15 @@ def load_songlist()->list:
             os.remove(f'{day}.json')
 
     # Remove the json that was made before; could be many days off
-    else:
-        delta_day = 1
-        while True:
-            old_day = (datetime.datetime.now() - datetime.timedelta(delta_day)).strftime('%Y-%m-%d')
-            old_json = f"{old_day}.json"
-            if os.path.exists(old_json):
-                os.remove(old_json)
-                break
-            delta_day += 1
+    # else:
+    #     delta_day = 1
+    #     while True:
+    #         old_day = (datetime.datetime.now() - datetime.timedelta(delta_day)).strftime('%Y-%m-%d')
+    #         old_json = f"{old_day}.json"
+    #         if os.path.exists(old_json):
+    #             os.remove(old_json)
+    #             break
+    #         delta_day += 1
 
 
     songlist = [
@@ -281,7 +281,7 @@ def compare_song(guess:song,answer:song)->dict:
 def load_playlist(id)-> list:
     """
     Given a spotify playlist link, return a list of song objects 
-
+    For playlist mode, the release date will be replaced by date added to playlist
 
     Args:
         id: Spotify playlist id
@@ -301,7 +301,8 @@ def load_playlist(id)-> list:
                         song(
                                 title = entry['track']['name'],
                                 artist = entry['track']['artists'][0]['name'],
-                                release_date = entry['track']['album']['release_date'],
+                                # Using Date Added instead
+                                release_date = entry['added_at'][:10],
                                 duration = entry['track']['duration_ms'],
                                 explicit = entry['track']['explicit'],    
                                 ranking = None                            
