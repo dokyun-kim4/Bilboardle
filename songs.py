@@ -23,7 +23,7 @@ class song:
         """
         Song object constructor
         """
-        self._title = title
+        self._title = title.replace('\"','\'')
         self._artist=artist
         self._release_date = datetime.datetime(
                                 int(release_date.split('-')[0]),
