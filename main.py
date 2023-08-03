@@ -8,7 +8,6 @@ import random
 app = Flask(__name__)
 
 #Load songs
-global songlist
 songlist = load_songlist()
 
 
@@ -36,7 +35,11 @@ def playlist():
 
 @app.route('/playlist-game/<id>')
 def playlist_game(id):
+    global songlist
     songlist = load_playlist(id)
+    global answer_song
+    answer_song = random.choice(songlist)
+    
     song_names = [entry.title for entry in songlist]
     return render_template('playlist_game.html',names=song_names)
 
@@ -60,4 +63,4 @@ def check_guess():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
