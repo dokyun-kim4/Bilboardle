@@ -6,15 +6,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='playlist_game.css') }}">
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <h1>Playlist Mode</h1>
+    </nav>
+
     <form id="guess-form">
         <div class="form-group">
           <input type="text" id="guess-input" placeholder="Guess a song" name="guess" required>
           <input type="submit" value="Submit">
         </div>
     </form>
+
+    <div class="row">
+        <div class="rect">Artist</div>
+        <div class="rect">Duration</div>
+        <div class="rect">Explicit</div>
+        <div class="rect">Ranking</div>
+        <div class="rect">Date Added </div>
+        <div class="rect">Title</div>
+    </div>
+  
+  
+    <div id="result"></div>
+
     <script>
         $( function() {
           var availableTags = [
