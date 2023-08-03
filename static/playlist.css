@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Passion+One:wght@700&family=Rajdhani:wght@600&display=swap');
+
+
+body {
+    background-color: #93A3B1;
+    font-family: 'Passion One', Arial;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-logo {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.welcome-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.welcome-title {
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.welcome-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 30px;
+    color: #000000;
+    margin-bottom: 50px
+}
+
+.welcome-form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    padding: 10px 11px;
+}
+
+button[type="submit"] {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    background-color: #2134a2;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 6px 12px;
+}
+
+.welcome-goback {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #2134a2;
+    padding: 8px 15px;
+}
+
+
+a {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}

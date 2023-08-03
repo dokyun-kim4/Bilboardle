@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Passion+One:wght@700&family=Rajdhani:wght@600&display=swap');
+
+body {
+    background-color: #93A3B1;
+    font-family: "Passion One";
+    text-align: center;
+    margin: 0px;
+}
+
+nav {
+    border-bottom: 2px solid #1E212B;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+h1 {
+    color: #1E212B;
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    font-family: "Rajdhani";
+    border-radius: 5px;
+    padding: 8px 11px;
+}
+
+input[type="submit"] {
+    font-family: "Rajdhani";
+    background-color: #2134a2;
+    color: #dfdfdf;
+    border-radius: 5px;
+    padding: 8px 8px;
+}
+
+.rect {
+    font-family: "Rajdhani";
+    width: 125px;
+    height: 80px;
+    background-color: #93A3B1;
+    display: inline-block;
+    text-align: top;
+    line-height: 100px;
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+
+.square {
+    font-family: "Rajdhani";
+    border-radius: 10px;
+    width: 125px;
+    height: 125px;
+    color: rgb(0, 0, 0);
+    background-color: #ccc;
+    display: inline-block;
+    text-align: center;
+    line-height: 100px;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+
+.row {
+    margin-bottom: 10px;
+}
+
+#guess-input {
+    margin-top: 40px;
+}
