@@ -111,7 +111,7 @@ def compile_songinfo(songs_and_artists)->list:
         song_info = query['tracks']['items'][0]
         return song_info
     
-    print("Getting song informtion...")
+    print("Getting song information...")
     for idx, pair in enumerate(songs_and_artists):
         title = pair['name']
         artist = pair['artist']

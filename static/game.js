@@ -1,11 +1,17 @@
+let guesses = 0;
 document.getElementById("guess-form").addEventListener("submit", function (event) {
     event.preventDefault();
     submitGuess();
 });
 
+
+
 function submitGuess() {
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value;
+    guesses++;
+    console.log(guesses)
+
 
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "/check_guess", true);
@@ -61,5 +67,20 @@ function updatePage(result) {
     }
 
     resultDiv.appendChild(rowDiv);
+
+
+    if (guesses == 6) {
+        openModal();
+    }
+
 }
 
+function openModal() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}

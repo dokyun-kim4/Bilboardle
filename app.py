@@ -13,6 +13,7 @@ songlist = load_songlist()
 
 # pick a random song object
 answer_song = random.choice(songlist)
+print(answer_song)
 
 @app.route('/')
 def home():
@@ -39,6 +40,7 @@ def playlist_game(id):
     songlist = load_playlist(id)
     global answer_song
     answer_song = random.choice(songlist)
+    print(answer_song)
     
     song_names = [entry.title for entry in songlist]
     return render_template('playlist_game.html',names=song_names)
