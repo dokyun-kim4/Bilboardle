@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon_32.ico') }}" />
-    <meta charset="UTF-8">
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename='favicon_32.ico') }}"
+    />
+    <meta charset="UTF-8" />
     <title>Bilboardle</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">  
-    </script>  
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">  
-    </script>  
-    
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
-        rel="stylesheet" type="text/css" />  
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='game.css') }}">
-</head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
 
-<body>
-  <nav>
-    <h1>Billboardle</h1>
-  </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
 
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <p>Out of guesses!</p>
+    <link
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='game.css') }}"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <h1>
+        <a href="{{ url_for('home')}}">Billboardle</a>
+      </h1>
+    </nav>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p>Out of guesses!</p>
+      </div>
     </div>
-  </div>
-  
+
     <form id="guess-form">
       <div class="form-group">
-        <input type="text" id="guess-input" placeholder="Guess a song" name="guess" required>
-        <input type="submit" value="Submit">
+        <input
+          type="text"
+          id="guess-input"
+          placeholder="Guess a song"
+          name="guess"
+          required
+        />
+        <input type="submit" value="Submit" />
       </div>
     </form>
-    
+
     <div class="row">
       <div class="rect">Artist</div>
       <div class="rect">Duration</div>
@@ -43,9 +61,8 @@
       <div class="rect">Title</div>
     </div>
 
-
     <div id="result"></div>
-    
+
     <script>
       $( function() {
         var availableTags = [
@@ -58,7 +75,7 @@
           html:true
         })
         });
-    </script> 
-</body>
-<script src="{{ url_for('static', filename='game.js') }}?v=2"></script>
+    </script>
+  </body>
+  <script src="{{ url_for('static', filename='game.js') }}?v=2"></script>
 </html>

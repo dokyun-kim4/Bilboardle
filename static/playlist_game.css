@@ -13,6 +13,11 @@ nav {
     margin-bottom: 0px;
 }
 
+a:link, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
 
 h1 {
     color: #1E212B;

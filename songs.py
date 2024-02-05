@@ -16,6 +16,7 @@ spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.getenv('ID'),
 )
 
 today = datetime.datetime.today().strftime('%Y-%m-%d')
+# today = datetime.datetime(2023,9,30).strftime('%Y-%m-%d')
    
 
 class song:
