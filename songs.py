@@ -15,9 +15,7 @@ spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.getenv('ID'),
                                                scope="playlist-modify-private")
 )
 
-today = datetime.datetime.today().strftime('%Y-%m-%d')
-# today = datetime.datetime(2023,9,30).strftime('%Y-%m-%d')
-   
+today = datetime.datetime.today().strftime('%Y-%m-%d')   
 
 class song:
     def __init__(self,title:str,artist:str,release_date:str,duration:int,explicit:bool,ranking:int):
@@ -208,18 +206,6 @@ def load_songlist()->list:
         # Cleanup
         for day in old_days[:len(old_days)-1]:
             os.remove(f'{day}.json')
-
-    # Remove the json that was made before; could be many days off
-    # else:
-    #     delta_day = 1
-    #     while True:
-    #         old_day = (datetime.datetime.now() - datetime.timedelta(delta_day)).strftime('%Y-%m-%d')
-    #         old_json = f"{old_day}.json"
-    #         if os.path.exists(old_json):
-    #             os.remove(old_json)
-    #             break
-    #         delta_day += 1
-
 
     songlist = [
                 song(
