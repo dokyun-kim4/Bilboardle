@@ -22,3 +22,6 @@ After making a guess, the game will display if the guessed song matches any of t
 - Bilboard ranking (will always be green for playlist mode)
 - Release date (Date added for playlist mode)
 - Title
+
+## Download Instructions
+Fork your own copy of this repository and run `app.py`.
